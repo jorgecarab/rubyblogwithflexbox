@@ -1,2 +1,24 @@
 <h1>Home#index</h1>
+
 <p>Find me in app/views/home/index.html.erb</p>
+
+
+<div class="title">
+<h1>Welcome to the journal</h1>
+</div>
+
+
+
+<div class="posts">
+
+<% @posts.each do |post| %>
+    <div class="one-post">
+    <img class="image" src="<%= post.media %>">
+    <div class="title"> <%= post.title %></div>
+    <div class="content"><p> <%= post.body %> </p></div>
+    </div>
+
+<% end%>
+    
+
+</div>
