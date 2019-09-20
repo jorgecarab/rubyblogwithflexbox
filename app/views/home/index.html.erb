@@ -3,25 +3,27 @@
 <p>Find me in app/views/home/index.html.erb</p>
 
 
-<% if signed_in? %>
-Signed in as: <%= current_user.email %>
-<%= button_to 'Sign out', sign_out_path, method: :delete %>
-<% else %>
-<%= link_to 'Sign in', sign_in_path %>
-<% end %>
-
-<div id="flash">
-<% flash.each do |key, value| %>
-  <div class="flash <%= key %>"><%= value %></div>
-<% end %>
-</div>
-
 
 <div class="title">
 <h1>Welcome to the journal</h1>
 </div>
 
 
+<div class="myposts">
+<h1>my posts</h1>
+<% if signed_in? %>
+<% @myposts.each do |mypost| %>
+  <div class="one-post">
+  <img class="image" src="<%= mypost.media %>">
+  <div class="title"> <%= mypost.title %></div>
+  <div class="content"><p> <%= mypost.body %> </p></div>
+  </div>
+
+<% end%>
+<% end %>
+  
+<h1>all posts</h1>
+</div>
 
 <div class="posts">
 
