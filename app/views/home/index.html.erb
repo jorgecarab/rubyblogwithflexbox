@@ -25,16 +25,23 @@
 <h1>all posts</h1>
 </div>
 
+
 <div class="posts">
-
 <% @posts.each do |post| %>
-    <div class="one-post">
-    <img class="image" src="<%= post.media %>">
-    <div class="title"> <%= post.title %></div>
-    <div class="content"><p> <%= post.body %> </p></div>
+<div class="row">
+<div class="col s12 m7">
+  <div class="card">
+    <div class="card-image">
+      <img src="<%= post.media %>">
+      <span class="card-title"><%= post.title %></span>
     </div>
-
-<% end%>
+    <div class="card-content">
+      <p><%= post.body %> </p>
+    </div>
     
-
+  </div>
 </div>
+</div>
+<% end%>
+</div>
+

@@ -2,8 +2,33 @@
 <html>
 <head>
   <%= csrf_meta_tag %>
+  <%= stylesheet_link_tag "application" %>
+
 </head>
 <body>
+
+<!-- beginning of new code -->
+  <nav>
+    <div class="nav-wrapper blue-grey darken-1">
+      <a href="#" class="brand-logo center">Blog app</a>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li><a href="post/create">Create</a></li>
+        <li><a href="#">Home</a></li>
+      </ul>
+    </div>
+  </nav>
+  <!-- end of new code -->
+  
+  
+
+ <div class="container">
+   <div class="row">        
+  <div class="col s9"> 
+  <%= yield %>
+  </div>
+  <div class="col s3">   <!-- create the second column div -->
+    <h3>Blog</h3>
+    
   <div id="header">
     <% if signed_in? -%>
       <%= button_to t(".sign_out"), sign_out_path, method: :delete %>
@@ -16,8 +41,11 @@
     <% flash.each do |key, value| -%>
       <div id="flash_<%= key %>"><%=h value %></div>
     <% end %>
+  </div>  
   </div>
-
-  <%= yield %>
+  </div>
+  </div>
 </body>
+
+
 </html>

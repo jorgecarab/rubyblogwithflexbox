@@ -1,5 +1,5 @@
 class PostController < ApplicationController
-  before_action :require_login, only: [:store]
+  before_action :require_login, only: [:store, :delete]
 
   def create
   end
@@ -14,4 +14,10 @@ class PostController < ApplicationController
     #create a post object and saves to the database
 
   end
+
+  def delete
+  
+    
+  end
+
 end

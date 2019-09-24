@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'post/create'
+  get 'post/delete'
   post 'post/store', only: [:store]
   get 'home/index',only: [:userpost]
   root 'home#index'
