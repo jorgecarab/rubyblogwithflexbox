@@ -20,11 +20,15 @@ class PostController < ApplicationController
     @posts=Post.where({:user_id=> current_user.id})
   end
 
-  
+
   def destroy
     
    @post=Post.find(params[:"post.id"])
    @post.destroy
+
+
+   
+
    
   end
 

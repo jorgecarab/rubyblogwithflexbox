@@ -6,6 +6,7 @@ class CreatePosts < ActiveRecord::Migration[6.0]
       t.text :body
       t.text :author
       t.text :media
+      t.text :public_key
 
       t.timestamps
     end

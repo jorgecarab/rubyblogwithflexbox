@@ -16,7 +16,7 @@
     <div class="media-content">
       <div class="content">
         <p class="is-medium">
-          <small>@johnsmith</small> <small>31m</small>
+          <small>@<%= post.author %></small> <small>shared on <%= post.created_at.strftime("%Y-%m-%d") %></small>
           <br>
           <%= post.body %> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
         </p>

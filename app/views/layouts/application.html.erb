@@ -27,11 +27,10 @@
 
   <div id="navbarBasicExample" class="navbar-menu">
     <div class="navbar-start">
-      <a class="navbar-item" href="man">
-        Home
-      </a>
-
-      <a class="navbar-item">
+     
+      <a href='<%= "/home/index" %>' class="navbar-item">Home</a>
+     
+      <a href='<%= "/post/create" %>'  class="navbar-item">
         Create
       </a>
 
@@ -47,6 +46,7 @@
     <% else -%>
       <%= link_to t(".sign_in"), sign_in_path, :class => "nabvar-item" -%>
     <% end -%>
+    
      
   </div>
   </div>
