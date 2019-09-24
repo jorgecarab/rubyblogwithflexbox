@@ -7,8 +7,7 @@ ruby '2.6.3'
 #adding clearance to gemfile https://github.com/thoughtbot/clearance
  gem "clearance"
  
-#adding materialize
- gem 'materialize-sass'
+ gem "bulma-rails", "~> 0.7.5"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.0'

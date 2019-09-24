@@ -1,47 +1,63 @@
-<h1>Home#index</h1>
 
-<p>Find me in app/views/home/index.html.erb</p>
+<div class="content"> <h1>All Artwork</h1></div>
 
-
-
-<div class="title">
-<h1>Welcome to the journal</h1>
-</div>
-
-
-<div class="myposts">
-<h1>my posts</h1>
-<% if signed_in? %>
-<% @myposts.each do |mypost| %>
-  <div class="one-post">
-  <img class="image" src="<%= mypost.media %>">
-  <div class="title"> <%= mypost.title %></div>
-  <div class="content"><p> <%= mypost.body %> </p></div>
-  </div>
-
-<% end%>
-<% end %>
-  
-<h1>all posts</h1>
-</div>
-
-
-<div class="posts">
 <% @posts.each do |post| %>
-<div class="row">
-<div class="col s12 m7">
-  <div class="card">
-    <div class="card-image">
-      <img src="<%= post.media %>">
-      <span class="card-title"><%= post.title %></span>
+<div class="box">
+<div class="content"><h1><%= post.title %></h1></div>
+
+  <article class="media">
+    <div class="media-left">
+
+      <figure class="image is-128x128">
+        <img src="<%= post.media %>" alt="Image">
+      </figure>
+
     </div>
-    <div class="card-content">
-      <p><%= post.body %> </p>
-    </div>
+    <div class="media-content">
+      <div class="content">
+        <p class="is-medium">
+          <small>@johnsmith</small> <small>31m</small>
+          <br>
+          <%= post.body %> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
+        </p>
+      </div>
     
-  </div>
+    </div>
+  </article>
+  
 </div>
-</div>
+
 <% end%>
-</div>
+
+
+<% if signed_in? %>
+<h2>My art</h2>
+<table class="responsive-table">
+    <thead>
+      <tr>
+          <th>Picture name</th>
+          <th>Description</th>
+          <th>Delete</th>
+      </tr>
+    </thead>
+    
+    <tbody>
+    <% @myposts.each do |mypost| %>
+      <tr>
+        <td><%= mypost.title %></td>
+        <td><%= mypost.body %></td>
+        <td>$0.87</td>
+      </tr>
+      <% end%>
+    </tbody>
+  </table>
+  <% end %>
+
+
+
+
+<div id="flash">
+<% flash.each do |key, value| -%>
+  <div id="flash_<%= key %>"><%=h value %></div>
+<% end %>
 

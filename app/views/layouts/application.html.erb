@@ -7,44 +7,76 @@
 </head>
 <body>
 
-<!-- beginning of new code -->
-  <nav>
-    <div class="nav-wrapper blue-grey darken-1">
-      <a href="#" class="brand-logo center">Blog app</a>
-      <ul id="nav-mobile" class="left hide-on-med-and-down">
-        <li><a href="post/create">Create</a></li>
-        <li><a href="#">Home</a></li>
-      </ul>
-    </div>
-  </nav>
+
+
+<!-- nav ends-->
+
+
+  <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="https://bulma.io">
+      <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
+    </a>
+
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item" href="man">
+        Home
+      </a>
+
+      <a class="navbar-item">
+        Create
+      </a>
+
+      
+
+  </div>
+  <div class="navbar-end">
+  
+   <% if signed_in? %>
+
+     <%= button_to t(".sign_out"), sign_out_path, method: :delete %>
+      
+    <% else -%>
+      <%= link_to t(".sign_in"), sign_in_path, :class => "nabvar-item" -%>
+    <% end -%>
+     
+  </div>
+  </div>
+</nav>
+     
+       
   <!-- end of new code -->
   
-  
 
- <div class="container">
-   <div class="row">        
-  <div class="col s9"> 
+  <div class="column is-full">
+  <div class="columns">
+  <div class="column">
   <%= yield %>
   </div>
-  <div class="col s3">   <!-- create the second column div -->
-    <h3>Blog</h3>
-    
-  <div id="header">
-    <% if signed_in? -%>
-      <%= button_to t(".sign_out"), sign_out_path, method: :delete %>
-    <% else -%>
-      <%= link_to t(".sign_in"), sign_in_path %>
-    <% end -%>
-  </div>
 
-  <div id="flash">
-    <% flash.each do |key, value| -%>
-      <div id="flash_<%= key %>"><%=h value %></div>
-    <% end %>
-  </div>  
+
+
+  <div class="column is-one-third">
+    
+  
+
+
   </div>
-  </div>
-  </div>
+ 
+</div>
+
+
+  
+
+ 
 </body>
 
 

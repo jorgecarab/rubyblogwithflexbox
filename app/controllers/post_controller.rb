@@ -1,5 +1,5 @@
 class PostController < ApplicationController
-  before_action :require_login, only: [:store, :delete]
+  before_action :require_login, only: [:store, :destroy, :delete]
 
   def create
   end
@@ -16,8 +16,16 @@ class PostController < ApplicationController
   end
 
   def delete
-  
     
+    @posts=Post.where({:user_id=> current_user.id})
+  end
+
+  
+  def destroy
+    
+   @post=Post.find(params[:"post.id"])
+   @post.destroy
+   
   end
 
 end

@@ -1,2 +1,17 @@
+<% @posts.each do |post| %>
+  
+    
+    <form method="POST" action="/post/destroy" enctype="multipart/form-data" class="post-form">
+<%= token_tag %>
 
-<p>eliminar</p>
+<div class="form-group">
+    <label for="title" class="flow-text"><%= post.title%></label>
+    <input type="hidden" name="post.id" class="form-control" value="<%= post.id %>" >
+</div>
+
+
+<div class="from-group">
+    <div><input class="btn waves-effect waves-light" type="submit" value="Delete Post"></div>
+</div>
+</form>
+    <% end %>
