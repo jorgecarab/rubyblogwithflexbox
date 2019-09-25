@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2019_09_20_040207) do
     t.text "body"
     t.text "author"
     t.text "media"
+    t.text "public_key"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_posts_on_user_id"

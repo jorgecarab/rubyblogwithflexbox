@@ -1,0 +1,43 @@
+<div class="columns">
+<div class="column"></div>
+  <div class="column is-two-fifths">
+
+
+<div class="field">
+<form method="POST" action="/posts/store" enctype="multipart/form-data" class="post-form">
+<%= token_tag %>
+
+<div class="form-group">
+
+    <label for ="title" class="label">A creative title?</label>
+
+    <input class="input" type="text" name="title" placeholder="Name your work">
+
+</div>
+
+<div class="control">
+  <input class="input" type="hidden" name="name placeholder="Text input">
+</div>
+
+</div>
+<div class="form-group">
+    <label for ="media" class="label">Select your art </label>
+
+    <input type="file"  class="button is-primary" name="media" class="form-control media-upload">
+</div>
+
+
+     <label for ="body" class="label">What is your art all about?</label>
+   <textarea class="textarea" name="body" placeholder="The world needs to know what inspires you" rows="10"></textarea>
+
+<div class="from-group">
+    <div><input class="button is-primary" type="submit" value="Submit"></div>
+
+</div>
+</form>
+
+</div>
+<div class="column"></div>
+
+
+</div>

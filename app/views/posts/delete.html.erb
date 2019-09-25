@@ -1,7 +1,7 @@
 <% @posts.each do |post| %>
-  
-    
-    <form method="POST" action="/post/destroy" enctype="multipart/form-data" class="post-form">
+
+
+    <form method="POST" action="/posts/destroy" enctype="multipart/form-data" class="post-form">
 <%= token_tag %>
 
 <div class="form-group">

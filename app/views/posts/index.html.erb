@@ -19,8 +19,11 @@
           <small>@<%= post.author %></small> <small>shared on <%= post.created_at.strftime("%Y-%m-%d") %></small>
           <br>
           <%= post.body %>
+
         </p>
-        <%= link_to ("Read more", post_path(post) :class => "action show") %>
+        <%= link_to("Show", { :controller => 'posts', :action => 'show', :id =>post.id}, :class => 'action show') %>
+
+
       </div>
 
     </div>
