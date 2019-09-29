@@ -4,13 +4,12 @@
 
 
 
-    <div class="content"><h1>Share my artwork</h1></div>
 
-
+<div class="content"><h1> Update my artwork</h1></div>
 <div class="field">
 
-<%=form_for :post , url: { action: "store" },  :html=> {:enctype=>"multipart/form-data" , :class=>"post-form"} do |f| %>
-<%= label_tag(:title, "A creative title?", :class =>"label") %>
+<%=form_for :post , url: { action: "update" },  :html=> {:enctype=>"multipart/form-data" , :class=>"post-form"} do |f| %>
+<%= label_tag(:title, "A creative title?", :class =>"label", :value=>"@post.title") %>
 <%= f.text_field(:title, :class=>"input", :placeholder=>"Name your work")%>
 <%= label_tag(:media, "Please select your artwork", :class =>"label") %>
 

@@ -1,17 +1,32 @@
+<div class="columns">
+<div class="column"></div>
+  <div class="column is-two-fifths">
+
+
+
 <% @posts.each do |post| %>
 
 
-    <form method="POST" action="/posts/destroy" enctype="multipart/form-data" class="post-form">
+<div class="content"><h1><%= post.title %> </h1></div>   <form method="POST" action="/posts/destroy" enctype="multipart/form-data" class="post-form">
 <%= token_tag %>
 
 <div class="form-group">
-    <label for="title" class="flow-text"><%= post.title%></label>
     <input type="hidden" name="post.id" class="form-control" value="<%= post.id %>" >
 </div>
-
 
 <div class="from-group">
     <div><input class="btn waves-effect waves-light" type="submit" value="Delete Post"></div>
 </div>
 </form>
+
+
+  <%= link_to("Edit", { :controller => 'posts', :action => 'edit', :id =>post.id}, :class => 'action edit') %>
+
+
     <% end %>
+
+  </div>
+  <div class="column"></div>
+
+
+  </div>
